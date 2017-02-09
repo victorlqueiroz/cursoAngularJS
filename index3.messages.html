@@ -13,7 +13,6 @@
 
     <link rel="stylesheet" href="node_modules/angular-toastr/dist/angular-toastr.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" href="node_modules/angular-ui-grid/ui-grid.css">
     <!-- -->
 
     <!-- imports externos -->
@@ -22,11 +21,10 @@
     <script src="node_modules/angular-messages/angular-messages.js"></script>
     <script src="node_modules/angular-animate/angular-animate.js"></script>
     <script src="node_modules/angular-toastr/dist/angular-toastr.tpls.js"></script>
-    <script src="node_modules/angular-ui-grid/ui-grid.js"></script>
     <!-- fim imports externos -->
 
     <script src="app/config/pd-app.module.js"></script>
-    <script src="controller/index5.controller.js"></script>
+    <script src="controller/index.controller.js"></script>
     <script src="app/services/pd-alert.service.js"></script>
 
     <script src="app/filter/pd-maiusculo.filter.js"></script>
@@ -88,13 +86,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <label>Cor</label>
-                        <input class="form-control" ng-model="entidade.cor">
-                    </div>
-                </div>
             </div>
             <div class="panel-footer">
                 <button class="btn btn-primary" ng-click="salvar()">
@@ -108,27 +99,25 @@
                     Excluir</button>
             </div>
 
-            <div ui-grid="gridOptions"
-                ui-grid-selection></div>
-            <!--<table class="table">-->
-                <!--<tr>-->
-                    <!--<th>Nome</th>-->
-                    <!--<th>Sobrenome</th>-->
-                    <!--<th>Sexo</th>-->
-                    <!--<th>Nascimento</th>-->
-                    <!--<th>Ações</th>-->
-                <!--</tr>-->
-                <!--<tr ng-repeat="pessoa in listaDePessoas">-->
-                    <!--<td ng-bind="::pessoa.nome | maiusculo"></td>-->
-                    <!--<td ng-bind="::pessoa.sobrenome"></td>-->
-                    <!--<td ng-bind="::pessoa.sexo"></td>-->
-                    <!--<td ng-bind="::pessoa.nascimento | date : 'dd//MM/yyyy'"></td>-->
-                    <!--<td>-->
-                        <!--<button class="btn btn-primary" ng-click="editar(pessoa)">Editar</button>-->
-                        <!--<button class="btn btn-danger" ng-click="excluir($index)">Excluir</button>-->
-                    <!--</td>-->
-                <!--</tr>-->
-            <!--</table>-->
+            <table class="table">
+                <tr>
+                    <th>Nome</th>
+                    <th>Sobrenome</th>
+                    <th>Sexo</th>
+                    <th>Nascimento</th>
+                    <th>Ações</th>
+                </tr>
+                <tr ng-repeat="pessoa in listaDePessoas">
+                    <td ng-bind="::pessoa.nome | maiusculo"></td>
+                    <td ng-bind="::pessoa.sobrenome"></td>
+                    <td ng-bind="::pessoa.sexo"></td>
+                    <td ng-bind="::pessoa.nascimento | date : 'dd//MM/yyyy'"></td>
+                    <td>
+                        <button class="btn btn-primary" ng-click="editar(pessoa)">Editar</button>
+                        <button class="btn btn-danger" ng-click="excluir($index)">Excluir</button>
+                    </td>
+                </tr>
+            </table>
         </div>
     </form>
 </div>

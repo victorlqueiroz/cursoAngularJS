@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="node_modules/angular-toastr/dist/angular-toastr.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="node_modules/angular-ui-grid/ui-grid.css">
     <!-- -->
 
     <!-- imports externos -->
@@ -20,46 +22,21 @@
     <script src="node_modules/angular-messages/angular-messages.js"></script>
     <script src="node_modules/angular-animate/angular-animate.js"></script>
     <script src="node_modules/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="node_modules/angular-ui-grid/ui-grid.js"></script>
     <!-- fim imports externos -->
 
     <script src="app/config/pd-app.module.js"></script>
-    <script src="controller/index4.controller.js"></script>
+    <script src="controller/index6.controller.js"></script>
     <script src="app/services/pd-alert.service.js"></script>
 
     <script src="app/filter/pd-maiusculo.filter.js"></script>
 
-    <style>
-        .div1{
-            background-color: red;
-            height: 200px;
-            width: 250px;
-            border: inset;
-            border-color: black;
-            border-width: 2px;
-        }
-        .div2{
-            background-color: blue;
-            height: 200px;
-            width: 250px;
-        }
-        .div3{
-            background-color: red;
-            border-width: 3px;
-            border-style: inset;
-        }
-
-    </style>
 </head>
 <body ng-app="pdCurso" class="container">
 
-<div ng-controller="IndexController">
-    <input ng-model="cor">
+<div ng-controller="Index6Controller">
 
-    <div ng-style="cssDaDiv"></div>
-
-    <div ng-class="classeCss"></div>
-
-    <div ng-class="{'div2' : cor === '1'}"></div>
+    <button ng-click="dispararEvento()">TesteEvento</button>
 </div>
 
 </body>

@@ -6,6 +6,8 @@
 
     IndexController.$inject = ['$scope', 'PdAlertService', '$filter'];
     function IndexController($scope, PdAlertService, $filter) {
+        // $scope.nome = 'Victor';
+
         $scope.entidade = {};
         $scope.listaDePessoas = [];
 
@@ -13,13 +15,11 @@
         $scope.limpar = limpar;
         $scope.editar = editar;
         $scope.excluir = excluir;
-        $scope.getStyleDaLinha = getStyleDaLinha;
 
         $scope.gridOptions = {
             data: 'listaDePessoas',
             enableColumnMenus: false,
             enableRowSelection: true,
-            rowTemplate:'app/templates/row-template.html',
             columnDefs: [
                 {name:'Nome', field:'nome', width: '20%'},
                 {name:'Sobrenome', field:'sobrenome', width: '30%'},
@@ -47,16 +47,6 @@
 
             $scope.nome = 'Victor';
             //console.log('Fechou alert');
-        }
-
-        function getStyleDaLinha(linhaSelecionada) {
-            var style = {};
-
-            if(linhaSelecionada.cor) {
-                style.backgroundColor = linhaSelecionada.cor;
-            }
-
-            return style;
         }
 
         function salvar() {

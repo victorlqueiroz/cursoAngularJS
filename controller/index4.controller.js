@@ -1,62 +1,38 @@
-angular.module('pdCurso')
-    .controller('IndexController', IndexController);
+(function () {
+    'use strict';
 
-IndexController.$inject = ['$scope', 'PdAlertService', '$filter'];
-function IndexController($scope, PdAlertService, $filter) {
-    $scope.nome = 'Victor';
+    angular.module('pdCurso')
+        .controller('IndexController', IndexController);
 
-    $scope.entidade = {};
-    $scope.listaDePessoas = [];
+    function IndexController($scope, PdAlertService, $filter) {
 
-    $scope.salvar = salvar;
-    $scope.limpar = limpar;
-    $scope.editar = editar;
-    $scope.excluir = excluir;
+        var vm = this;
 
-    $scope.onClickBotao = onClickBotao;
+        $scope.$watch('vm.cor', onWatchCor);
 
-    function onClickBotao() {
-        //$scope.teste = '';
-        //alert('Teste');
+        vm.cssDaDiv = {
+            width: '150px',
+            height: '150px'
+        };
 
-        $scope.nome = 'Victor';
-        //console.log('Fechou alert');
-    }
+        vm.classeCss = '';
 
-    function salvar() {
-        if($scope.formPessoa.$invalid) {
+        iniciar();
 
-            angular.forEach($scope.formPessoa.$error, function (errorField) {
-               for (var i = 0; i < errorField.length; i++) {
-                   errorField[i].$setTouched();
-               }
-            });
-            // alert('');
+        function iniciar() {
 
-            PdAlertService.showError('Verifique os campos inválidos');
-            return;
         }
-        var dataFormatada = $filter('date')($scope.entidade.nascimento, 'dd/M/yyyy');
 
-        $scope.listaDePessoas.push($scope.entidade)
-        limpar();
-
-        PdAlertService.showSuccess('Registro salvo com sucesso!');
+        function onWatchCor(newValue, oldValue) {
+            if(newValue === oldValue) {
+                return;
+            }
+            vm.cssDaDiv.backgroundColor = newValue;
+            if(newValue.toString() === '1') {
+                vm.classeCss = 'div1';
+            } else if(newValue.toString() === '2') {
+                vm.classeCss = 'div2 div3';
+            }
+        }
     }
-
-    function limpar() {
-        $scope.entidade = {};
-
-        $scope.formPessoa.$setUntouched();
-        angular.element('#itNome').focus();
-    }
-
-    function editar(pessoa) {
-        $scope.entidade = pessoa;
-    }
-
-    function excluir(index) {
-        $scope.listaDePessoas.splice(index,1);
-        PdAlertService.showSuccess('Registro excluido com sucesso!');
-    }
-}
+})();
