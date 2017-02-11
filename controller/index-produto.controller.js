@@ -4,12 +4,13 @@
     angular.module('pdCurso')
         .controller('IndexController', IndexController);
 
-    IndexController.$inject = ['$scope', 'PdAlertService', '$filter'];
-    function IndexController($scope, PdAlertService, $filter) {
+    function IndexController($state, PdAlertService, $filter) {
 
         var vm = this;
         vm.entidade = {};
         vm.listaDePessoas = [];
+
+        vm.alterarRota = alterarRota;
 
         vm.getStyleDaLinha = getStyleDaLinha;
 
@@ -26,6 +27,10 @@
                     cellTemplate:'app/templates/acoes-template-buttons.html'}
             ]
         };
+
+        function alterarRota(state) {
+            $state.go(state);
+        }
 
         function getStyleDaLinha(linhaSelecionada) {
             var style = {};

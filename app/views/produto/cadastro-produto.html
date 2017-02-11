@@ -7,13 +7,14 @@
             <div class="panel-body">
 
                 <div class="col-md-3">
-                    <div class="form-group" ng-class="{'has-error':formProduto.nome.$invalid && formProduto.nome.$touched}">
+                    <!--<div class="form-group" ng-class="{'has-error':formProduto.nome.$invalid && formProduto.nome.$touched}">-->
+                    <div class="form-group">
                         <label>Nome</label>
                         <input type="text" class="form-control" ng-model="entidade.nome" ng-maxlength="10"
-                               ng-minlength="2" name="nome" ng-required="true" id="itNome" autofocus>
-                        <div class="help-block" ng-messages="formProduto.nome.$error" ng-if="formProduto.nome.$invalid && formProduto.nome.$touched">
-                            <div ng-messages-include="app/templates/ng-messages.html"></div>
-                        </div>
+                               ng-minlength="2" name="nome" ng-required="true" id="itNome">
+                        <!--<div class="help-block" ng-messages="formProduto.nome.$error" ng-if="formProduto.nome.$invalid && formProduto.nome.$touched">-->
+                            <!--<div ng-messages-include="app/templates/ng-messages.html"></div>-->
+                        <!--</div>-->
                     </div>
                 </div>
             </div>
@@ -24,13 +25,13 @@
                 <button class="btn btn-warning" ng-click="vm.limpar()">
                     <i class="fa fa-eraser"></i>
                     Limpar</button>
-                <button class="btn btn-danger" ng-click="vm.editar()">
-                    <i class="fa fa-trash"></i>
-                    Editar</button>
+                <button class="btn btn-warning" ng-click="vm.pesquisar()">
+                    <i class="fa fa-eraser"></i>
+                    Pesquisar</button>
             </div>
 
-            <div ui-grid="vm.gridOptions"
-                 ui-grid-selection></div>
+            <!--<div ui-grid="vm.gridOptions"-->
+                 <!--ui-grid-selection></div>-->
         </div>
     </form>
 </div>

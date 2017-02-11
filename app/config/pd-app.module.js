@@ -1,3 +1,9 @@
+// (function () {
+//     'use strict';
+//
+//     angular.module('pdCurso', ['ui.grid', 'ui.router','oc.lazyLoad']);
+// })();
+
 (function () {
     'use strict';
 
@@ -9,22 +15,23 @@
         'ngMaterial',
         'ui.router',
         'oc.lazyLoad',
-        'angular-loading-bar'
+        'angular-loading-bar',
+        'LocalStorageModule'
     ]);
 
     angular.module('pdCurso')
-        .config(config);
+         .config(config);
 
-    function config($mdThemingProvider) {
-        $mdThemingProvider.theme('blue')
-            .primaryPalette('blue')
-            .accentPalette('pink');
+     function config($mdThemingProvider) {
+         $mdThemingProvider.theme('blue')
+             .primaryPalette('blue')
+             .accentPalette('pink');
 
-        $mdThemingProvider.theme('green')
-            .primaryPalette('green')
-            .accentPalette('pink');
+         $mdThemingProvider.theme('green')
+             .primaryPalette('green')
+             .accentPalette('pink');
 
-        //correção incompatibilidades angularjs 1.6
-        // $compileProvider.preAssignBindingsEnable(true);
-    }
+         //correção incompatibilidades angularjs 1.6
+         // $compileProvider.preAssignBindingsEnable(true);
+     }
 })();

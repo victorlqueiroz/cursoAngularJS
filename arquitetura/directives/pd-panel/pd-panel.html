@@ -1,0 +1,12 @@
+<div class="panel"
+    ng-class="classTipo">
+    <div class="panel-heading"
+        ng-if="titulo">
+        <h4>
+            <i ng-class="::classIcone"></i>
+            <h4 ng-bind="::titulo"></h4>
+        </h4>
+    </div>
+    <div class="panel-body" ng-transclude="">
+    </div>
+</div>

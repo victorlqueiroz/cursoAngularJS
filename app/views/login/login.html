@@ -1,0 +1,48 @@
+<!--<div ng-controller="LoginController as vm">-->
+    <!--<form name="formProduto" novalidate>-->
+        <!--<div class="panel-primary">-->
+            <!--<pd-login titulo="Cadastro de pessoa">-->
+                <!--<pd-crud-body>-->
+                    <!--<pd-input-text label="Usuario"-->
+                                   <!--ng-model="vm.entidade.usuario"-->
+                                   <!--colspan="3"-->
+                                   <!--ng-required="true">-->
+                    <!--</pd-input-text>-->
+                    <!--<pd-input-text label="Senha"-->
+                                   <!--ng-model="vm.entidade.senha"-->
+                                   <!--colspan="3"-->
+                                   <!--ng-required="true">-->
+                    <!--</pd-input-text>-->
+                <!--</pd-crud-body>-->
+                <!--<pd-crud-footer>-->
+                    <!--<md-button class="md-raised md-primary" ng-click="vm.login()">Login</md-button>-->
+                    <!--<md-button class="md-raised" ng-click="vm.registrar()">Registrar</md-button>-->
+                <!--</pd-crud-footer>-->
+            <!--</pd-login>-->
+        <!--</div>-->
+    <!--</form>-->
+<!--</div>-->
+
+
+<!--Pulling Awesome Font -->
+
+<div class="container" ng-controller="LoginController as vm">
+    <div class="row">
+        <div class="col-md-offset-5 col-md-3">
+            <div class="form-login">
+                <h4>Welcome back.</h4>
+                <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="username" ng-model="vm.entidade.login" />
+                </br>
+                <input type="text" id="userPassword" class="form-control input-sm chat-input" placeholder="password" ng-model="vm.entidade.senha" />
+                </br>
+                <div class="wrapper">
+            <span class="group-btn">
+                <a href="#" class="btn btn-primary btn-md" ng-click="vm.login()">Login <i class="fa fa-sign-in"></i></a>
+                <a href="#" class="btn btn-primary" ng-click="vm.registrar()">Registrar <i class="fa"></i></a>
+            </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

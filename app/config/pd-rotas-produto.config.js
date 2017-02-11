@@ -4,7 +4,7 @@
     angular.module('pdCurso')
         .config(config);
 
-    function config($stateProvider) {
+    function config($stateProvider, $urlRouterProvider) {
 
         const cadastroProduto = {
             name:'cadastroProduto',
@@ -31,5 +31,7 @@
         $stateProvider
             .state('cadastroProduto', cadastroProduto)
             .state('pesquisaProduto', pesquisaProduto);
+
+        $urlRouterProvider.otherwise('/pesquisa-produto');
     }
 })();

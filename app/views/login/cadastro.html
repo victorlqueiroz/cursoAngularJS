@@ -1,0 +1,73 @@
+<!--<div ng-controller="CadastroController as vm">-->
+    <!--<form name="formProduto" novalidate>-->
+        <!--<div class="panel-primary">-->
+            <!--<div class="panel-heading">-->
+                <!--Cadastro-->
+            <!--</div>-->
+            <!--<div class="panel-body">-->
+
+                <!--<div layout="row">-->
+                    <!--<div class="form-group">-->
+                        <!--<label>Nome</label>-->
+                        <!--<input type="text" class="form-control" ng-model="vm.entidade.nome" ng-maxlength="10"-->
+                               <!--ng-minlength="2" name="nome">-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div layout="row">-->
+                    <!--<div class="form-group">-->
+                        <!--<label>Login</label>-->
+                        <!--<input type="text" class="form-control" ng-model="vm.entidade.login" ng-maxlength="10"-->
+                               <!--ng-minlength="2" name="login">-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div layout="row">-->
+                    <!--<div class="form-group">-->
+                        <!--<label>Senha</label>-->
+                        <!--<input type="text" class="form-control" ng-model="vm.entidade.senha" ng-maxlength="10"-->
+                               <!--ng-minlength="2" name="senha">-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="panel-footer">-->
+                <!--<button class="btn btn-primary" ng-click="vm.salvar()">-->
+                    <!--<i class="fa fa-save"></i>-->
+                    <!--Salvar</button>-->
+                <!--<button class="btn btn-warning" ng-click="vm.limpar()">-->
+                    <!--<i class="fa fa-eraser"></i>-->
+                    <!--Limpar</button>-->
+                <!--<button class="btn" ng-click="vm.login()">-->
+                    <!--<i class="fa"></i>-->
+                    <!--Login</button>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</form>-->
+<!--</div>-->
+
+<div class="container" ng-controller="LoginController as vm">
+    <form name="formCadastro" novalidate>
+        <div class="row">
+            <div class="col-md-offset-5 col-md-3">
+                <div class="form-login">
+                    <h4>Register</h4>
+                    <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="username"
+                           ng-model="vm.entidade.nome"/>
+                    </br>
+                    <input type="text" id="login" class="form-control input-sm chat-input" placeholder="login"
+                           ng-model="vm.entidade.login"/>
+                    </br>
+                    <input type="text" id="userPassword" class="form-control input-sm chat-input" placeholder="password"
+                           ng-model="vm.entidade.senha"/>
+                    </br>
+                    <div class="wrapper">
+            <span class="group-btn">
+                <a href="#" class="btn btn-primary btn-md" ng-click="vm.salvar()">Salvar <i class="fa fa-sign-in"></i></a>
+                <a href="#" class="btn btn-md" ng-click="vm.limpar()">Limpar <i class="fa"></i></a>
+                <a href="#" class="btn btn-md" ng-click="vm.login()">Login <i class="fa"></i></a>
+            </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</div>

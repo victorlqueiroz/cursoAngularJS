@@ -5,8 +5,9 @@
 
     function PdAlertService(toastr) {
 
-        this.showSuccess = showSuccess;
-        this.showError = showError;
+        var vm = this;
+        vm.showSuccess = showSuccess;
+        vm.showError = showError;
 
         function showSuccess(mensagem, titulo) {
             titulo = titulo || 'OK';
